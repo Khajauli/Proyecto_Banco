@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import java.awt.Image;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Marlon
@@ -15,6 +16,23 @@ public class BancaVirtual extends javax.swing.JFrame {
      */
     public BancaVirtual() {
         initComponents();
+        scaleImage1();
+         scaleImage2();
+    }
+    
+    public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\kharol\\poli\\Segundo semestre\\programacion\\Proyecto\\1614646367528.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(lblLogo.getWidth(),lblLogo.getHeight() ,Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        lblLogo.setIcon(scaledIcon);
+    }
+    public void scaleImage2(){
+        ImageIcon icon=new ImageIcon("C:\\kharol\\poli\\Segundo semestre\\programacion\\Proyecto\\0206041f4dfb2e87986ed3acf3f681d8.jpg");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(lblIcon.getWidth(),lblIcon.getHeight() ,Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        lblIcon.setIcon(scaledIcon);
     }
 
     /**
@@ -26,18 +44,17 @@ public class BancaVirtual extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblLogo = new javax.swing.JLabel();
+        lblIcon = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 220, 190));
+
+        lblIcon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 376, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +95,7 @@ public class BancaVirtual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblIcon;
+    private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
 }
