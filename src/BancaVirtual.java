@@ -64,7 +64,7 @@ public class BancaVirtual extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(lblPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 210, 90, 90));
+        getContentPane().add(lblPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 90, 90));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -132,11 +132,11 @@ public class BancaVirtual extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 230, 280));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 230, 280));
         getContentPane().add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 210, 180));
 
         lblIcon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 600));
+        getContentPane().add(lblIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
