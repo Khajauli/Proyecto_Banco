@@ -40,7 +40,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         lblIcono1 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
         lblSaldo = new javax.swing.JLabel();
         lblNumero = new javax.swing.JLabel();
         txtSaldo = new javax.swing.JTextField();
@@ -159,10 +158,6 @@ public class Menu extends javax.swing.JFrame {
 
         lblIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_customer_32px.png"))); // NOI18N
 
-        txtNombre.setBackground(new java.awt.Color(240, 240, 240));
-        txtNombre.setText("Nombre del Usuario");
-        txtNombre.setBorder(null);
-
         lblSaldo.setText("Saldo disponible");
 
         lblNumero.setText("Número de cuenta");
@@ -180,9 +175,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(lblIcono1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNombre)
-                        .addGap(13, 13, 13))
+                        .addGap(13, 253, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -196,9 +189,7 @@ public class Menu extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIcono1))
+                .addComponent(lblIcono1)
                 .addGap(18, 18, 18)
                 .addComponent(lblNumero)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -376,7 +367,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPagos;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRecargas;
-    private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSaldo;
     // End of variables declaration//GEN-END:variables
 }
