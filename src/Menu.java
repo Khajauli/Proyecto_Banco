@@ -1,3 +1,7 @@
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,8 +19,15 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        scaleImage1();
     }
-
+ public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\kharol\\poli\\Segundo semestre\\programacion\\Proyecto\\1614646367528.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(lblLogo.getWidth(),lblLogo.getHeight() ,Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        lblLogo.setIcon(scaledIcon);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +53,12 @@ public class Menu extends javax.swing.JFrame {
         lblIcono1 = new javax.swing.JLabel();
         lblSaldo = new javax.swing.JLabel();
         lblNumero = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        lblNumero1 = new javax.swing.JLabel();
         txtSaldo = new javax.swing.JTextField();
+        txtTipo = new javax.swing.JTextField();
+        txtCuenta = new javax.swing.JTextField();
         pnlCajero = new javax.swing.JPanel();
         lblIcono4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -50,6 +66,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         lblIcono5 = new javax.swing.JLabel();
         pnlBorde1 = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -125,7 +146,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(lblIcono2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblIcono3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_cash_in_hand_32px.png"))); // NOI18N
@@ -156,112 +177,114 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         lblIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_customer_32px.png"))); // NOI18N
+        jPanel6.add(lblIcono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 19, 34, -1));
 
         lblSaldo.setText("Saldo disponible");
+        jPanel6.add(lblSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        lblNumero.setText("Número de cuenta");
+        lblNumero.setText("Tipo de cuenta");
+        jPanel6.add(lblNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        txtNombre.setBackground(new java.awt.Color(240, 240, 240));
+        txtNombre.setText("NOmbre");
+        txtNombre.setBorder(null);
+        jPanel6.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 160, 24));
+
+        jLabel1.setText("Nombre");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 29, 47, -1));
+
+        lblNumero1.setText("Número de cuenta");
+        jPanel6.add(lblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtSaldo.setBackground(new java.awt.Color(240, 240, 240));
         txtSaldo.setText("saldo");
         txtSaldo.setBorder(null);
+        jPanel6.add(txtSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 160, 10));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(lblIcono1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 253, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(lblSaldo)
-                                .addGap(30, 30, 30)
-                                .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblNumero))
-                        .addContainerGap(31, Short.MAX_VALUE))))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lblIcono1)
-                .addGap(18, 18, 18)
-                .addComponent(lblNumero)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSaldo)
-                    .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        txtTipo.setBackground(new java.awt.Color(240, 240, 240));
+        txtTipo.setText("numero de cuenta");
+        txtTipo.setBorder(null);
+        jPanel6.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 110, -1));
+
+        txtCuenta.setBackground(new java.awt.Color(240, 240, 240));
+        txtCuenta.setText("numero de cuenta");
+        txtCuenta.setBorder(null);
+        jPanel6.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 110, 10));
+
+        pnlCajero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_pos_terminal_26px.png"))); // NOI18N
+        pnlCajero.add(lblIcono4, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 34, -1));
 
-        jLabel9.setText("Cajero");
+        jLabel9.setText("Retiros");
+        pnlCajero.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 48, 40, -1));
 
-        javax.swing.GroupLayout pnlCajeroLayout = new javax.swing.GroupLayout(pnlCajero);
-        pnlCajero.setLayout(pnlCajeroLayout);
-        pnlCajeroLayout.setHorizontalGroup(
-            pnlCajeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCajeroLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(pnlCajeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIcono4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
-        );
-        pnlCajeroLayout.setVerticalGroup(
-            pnlCajeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCajeroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIcono4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        pnlRecargas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setText("Recargas");
+        pnlRecargas.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         lblIcono5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_phone_26px_1.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnlRecargasLayout = new javax.swing.GroupLayout(pnlRecargas);
-        pnlRecargas.setLayout(pnlRecargasLayout);
-        pnlRecargasLayout.setHorizontalGroup(
-            pnlRecargasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlRecargasLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel10)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRecargasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIcono5)
-                .addGap(24, 24, 24))
-        );
-        pnlRecargasLayout.setVerticalGroup(
-            pnlRecargasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlRecargasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIcono5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel10)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        pnlRecargas.add(lblIcono5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         pnlBorde1.setBackground(new java.awt.Color(69, 159, 156));
+
+        jLabel2.setFont(new java.awt.Font("Georgia", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("MENÚ PRINCIPAL");
 
         javax.swing.GroupLayout pnlBorde1Layout = new javax.swing.GroupLayout(pnlBorde1);
         pnlBorde1.setLayout(pnlBorde1Layout);
         pnlBorde1Layout.setHorizontalGroup(
             pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorde1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         pnlBorde1Layout.setVerticalGroup(
             pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(pnlBorde1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorde1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(36, 36, 36))
+        );
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_wallet_32px.png"))); // NOI18N
+
+        jLabel4.setText("Depósitos");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -269,41 +292,45 @@ public class Menu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlBorde2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlPrestamos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlRecargas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
             .addComponent(pnlBorde1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(38, 38, 38)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pnlBorde1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlPagos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlCajero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                    .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addComponent(pnlBorde2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -344,11 +371,16 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lblIcono1;
@@ -359,7 +391,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel lblIcono6;
     private javax.swing.JLabel lblIcono7;
     private javax.swing.JLabel lblIcono8;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNumero;
+    private javax.swing.JLabel lblNumero1;
     private javax.swing.JLabel lblSaldo;
     private javax.swing.JPanel pnlBorde1;
     private javax.swing.JPanel pnlBorde2;
@@ -367,6 +401,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPagos;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRecargas;
+    private javax.swing.JTextField txtCuenta;
+    private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSaldo;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

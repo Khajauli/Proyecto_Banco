@@ -1,3 +1,7 @@
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,8 +19,16 @@ public class Registro extends javax.swing.JFrame {
      */
     public Registro() {
         initComponents();
+        scaleImage1();
     }
 
+    public void scaleImage1(){
+        ImageIcon icon=new ImageIcon("C:\\kharol\\poli\\Segundo semestre\\programacion\\Proyecto\\1614646367528.png");
+        Image img=icon.getImage();
+        Image imgScale=img.getScaledInstance(lblLogo.getWidth(),lblLogo.getHeight() ,Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        lblLogo.setIcon(scaledIcon);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +74,7 @@ public class Registro extends javax.swing.JFrame {
         pnl = new javax.swing.JPanel();
         lblTexto14 = new javax.swing.JLabel();
         txtCuenta = new javax.swing.JTextField();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +83,7 @@ public class Registro extends javax.swing.JFrame {
 
         pnlCabecera.setBackground(new java.awt.Color(153, 153, 255));
 
-        lblTexto1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblTexto1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         lblTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblTexto1.setText("REGISTRO");
 
@@ -102,27 +115,28 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCabeceraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(lblTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(lblTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         pnlCabeceraLayout.setVerticalGroup(
             pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCabeceraLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
             .addGroup(pnlCabeceraLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblTexto1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCabeceraLayout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(pnlCabeceraLayout.createSequentialGroup()
+                        .addComponent(lblTexto1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel3.add(pnlCabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, -1));
 
-        lblTexto2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblTexto2.setFont(new java.awt.Font("Georgia", 0, 20)); // NOI18N
         lblTexto2.setText("BIENVENIDO");
-        jPanel3.add(lblTexto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel3.add(lblTexto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lblTexto6.setText("Fecha de nacimiento");
         jPanel3.add(lblTexto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
@@ -210,6 +224,7 @@ public class Registro extends javax.swing.JFrame {
 
         txtCuenta.setEnabled(false);
         jPanel3.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
+        jPanel3.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,6 +280,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblRegresar;
     private javax.swing.JLabel lblTexto1;
     private javax.swing.JLabel lblTexto10;
