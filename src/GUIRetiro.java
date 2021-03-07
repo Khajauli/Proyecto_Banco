@@ -1,6 +1,7 @@
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,11 +14,17 @@ import javax.swing.ImageIcon;
  * @author ivann
  */
 public class GUIRetiro extends javax.swing.JFrame {
-
+Cuenta cuenta;
+Retiros retiro;
     /**
      * Creates new form GUIRetiro
      */
     public GUIRetiro() {
+        initComponents();
+        scaleImage1();
+    }
+    public GUIRetiro(Cuenta c) {
+        this.cuenta=c;
         initComponents();
         scaleImage1();
     }
@@ -51,7 +58,8 @@ public void scaleImage1(){
         lblInformacion = new javax.swing.JLabel();
         txtMontoInfo = new javax.swing.JTextField();
         lblSaldo = new javax.swing.JLabel();
-        txtSueldo = new javax.swing.JTextField();
+        txtSaldo = new javax.swing.JTextField();
+        btnMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -60,7 +68,7 @@ public void scaleImage1(){
 
         lblRetiro.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         lblRetiro.setForeground(new java.awt.Color(255, 255, 255));
-        lblRetiro.setText("RETIRO");
+        lblRetiro.setText("Retiro");
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -82,9 +90,9 @@ public void scaleImage1(){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(54, 54, 54)
                 .addComponent(lblRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -109,7 +117,7 @@ public void scaleImage1(){
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 61, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -117,6 +125,11 @@ public void scaleImage1(){
         lblMonto.setText("Monto");
 
         btnAccion.setText("Retirar");
+        btnAccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -129,7 +142,7 @@ public void scaleImage1(){
                 .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
+                .addGap(123, 123, 123)
                 .addComponent(btnAccion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -140,16 +153,20 @@ public void scaleImage1(){
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMonto)
                     .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(btnAccion)
-                .addGap(39, 39, 39))
+                .addGap(30, 30, 30))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Confirmación"));
 
         lblInformacion.setText("Se ha retirado con exito");
 
+        txtMontoInfo.setEnabled(false);
+
         lblSaldo.setText("Saldo Actual");
+
+        txtSaldo.setEnabled(false);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -161,7 +178,7 @@ public void scaleImage1(){
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(lblSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(lblInformacion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,10 +194,17 @@ public void scaleImage1(){
                     .addComponent(txtMontoInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSaldo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        btnMenu.setText("Regresar a menú");
+        btnMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -192,6 +216,10 @@ public void scaleImage1(){
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMenu)
+                .addGap(138, 138, 138))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +228,9 @@ public void scaleImage1(){
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(btnMenu)
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,9 +238,7 @@ public void scaleImage1(){
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -226,6 +254,40 @@ public void scaleImage1(){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
+        // TODO add your handling code here:
+         double monto;
+        double saldo;
+        monto = Double.parseDouble(txtMonto.getText());
+        saldo= cuenta.getCapital();
+        do {
+        if (monto>saldo){
+        JOptionPane.showMessageDialog(null, "No posee esa cantidad en su cuenta", "Failure", JOptionPane.ERROR_MESSAGE);
+        //monto=Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese nuevamente el monto que desea retirar","Monto" ));
+        monto=Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese nuevamente el monto que desea retirar", "Monto", 1));
+        }
+        } while (monto>saldo);
+        retiro= new Retiros(monto, saldo);
+        cuenta.setCapital(retiro.calcularTransferencia());
+        
+         habilitarGui();
+        txtMontoInfo.setText(String.valueOf(monto));
+        txtSaldo.setText(String.valueOf(cuenta.getCapital()));
+        
+    }//GEN-LAST:event_btnAccionActionPerformed
+
+    private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
+        // TODO add your handling code here:
+        new Menu(cuenta).show();
+        this.hide();
+    }//GEN-LAST:event_btnMenuActionPerformed
+ public void habilitarGui(){
+    txtMonto.setEnabled(false);
+    lblMonto.setEnabled(false);
+    txtMontoInfo.setEnabled(true);
+    txtSaldo.setEnabled(true);
+    }
+ 
     /**
      * @param args the command line arguments
      */
@@ -263,6 +325,7 @@ public void scaleImage1(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccion;
+    private javax.swing.JButton btnMenu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -276,6 +339,6 @@ public void scaleImage1(){
     private javax.swing.JLabel lblSaldo;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtMontoInfo;
-    private javax.swing.JTextField txtSueldo;
+    private javax.swing.JTextField txtSaldo;
     // End of variables declaration//GEN-END:variables
 }
