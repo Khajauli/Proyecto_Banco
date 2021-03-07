@@ -335,6 +335,8 @@ public ArrayList cuentas=new ArrayList();
          cuentas.add(cuentaNueva);
     // }
         contador++;
+        new Menu(cuentaNueva).show();
+        this.hide();
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
