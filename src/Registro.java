@@ -313,7 +313,8 @@ public ArrayList cuentas=new ArrayList();
          telefono=txtTelefono.getText();
          contrasenia=txtContrasenia.getText();
          capital=Double.parseDouble(txtCapital.getText());
-         Cuenta cuentaNueva=new Cuenta( nombre, apellido, tipoCuenta, telefono,  contrasenia, capital);
+          ArrayList objetos = new ArrayList();
+         Cuenta cuentaNueva=new Cuenta( nombre, apellido, tipoCuenta, telefono,  contrasenia, capital,objetos);
          
          prueba1=Integer.parseInt(txtCedula.getText());
          if(cuentaNueva.verificarCedula(prueba1)==true){
