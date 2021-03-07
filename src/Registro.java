@@ -1,5 +1,6 @@
 
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 /*
@@ -13,13 +14,15 @@ import javax.swing.ImageIcon;
  * @author Marlon
  */
 public class Registro extends javax.swing.JFrame {
-
+int contador;
+public ArrayList cuentas=new ArrayList();
     /**
      * Creates new form 
      */
     public Registro() {
         initComponents();
         scaleImage1();
+    contador=0;
     }
 
     public void scaleImage1(){
@@ -42,11 +45,11 @@ public class Registro extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         pnlCabecera = new javax.swing.JPanel();
         lblTexto1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlBack = new javax.swing.JPanel();
         lblRegresar = new javax.swing.JLabel();
         lblTexto2 = new javax.swing.JLabel();
         lblTexto6 = new javax.swing.JLabel();
-        txtDireccion = new javax.swing.JTextField();
+        txtContrasenia = new javax.swing.JTextField();
         lblTexto3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
@@ -57,11 +60,6 @@ public class Registro extends javax.swing.JFrame {
         lblTexto11 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         lblTexto9 = new javax.swing.JLabel();
-        lblTexto7 = new javax.swing.JLabel();
-        lblTexto8 = new javax.swing.JLabel();
-        spnAnio = new javax.swing.JSpinner();
-        spnDia = new javax.swing.JSpinner();
-        spnMes = new javax.swing.JSpinner();
         lblTexto15 = new javax.swing.JLabel();
         rbtEmpresarial = new javax.swing.JRadioButton();
         rbtPrivada = new javax.swing.JRadioButton();
@@ -75,6 +73,13 @@ public class Registro extends javax.swing.JFrame {
         lblTexto14 = new javax.swing.JLabel();
         txtCuenta = new javax.swing.JTextField();
         lblLogo = new javax.swing.JLabel();
+        txtAnio = new javax.swing.JTextField();
+        txtDia = new javax.swing.JTextField();
+        txtMes = new javax.swing.JTextField();
+        lblTexto16 = new javax.swing.JLabel();
+        lblTexto17 = new javax.swing.JLabel();
+        lblTexto18 = new javax.swing.JLabel();
+        lblTexto19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,22 +92,27 @@ public class Registro extends javax.swing.JFrame {
         lblTexto1.setForeground(new java.awt.Color(255, 255, 255));
         lblTexto1.setText("REGISTRO");
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        pnlBack.setBackground(new java.awt.Color(153, 153, 255));
+        pnlBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlBackMouseClicked(evt);
+            }
+        });
 
         lblRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_26px.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBackLayout = new javax.swing.GroupLayout(pnlBack);
+        pnlBack.setLayout(pnlBackLayout);
+        pnlBackLayout.setHorizontalGroup(
+            pnlBackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBackLayout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(lblRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlBackLayout.setVerticalGroup(
+            pnlBackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBackLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblRegresar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -114,22 +124,21 @@ public class Registro extends javax.swing.JFrame {
             pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCabeceraLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
                 .addComponent(lblTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         pnlCabeceraLayout.setVerticalGroup(
             pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCabeceraLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(pnlCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlCabeceraLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(pnlCabeceraLayout.createSequentialGroup()
-                        .addComponent(lblTexto1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(8, 8, 8)
+                        .addComponent(lblTexto1)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel3.add(pnlCabecera, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, -1));
@@ -140,7 +149,7 @@ public class Registro extends javax.swing.JFrame {
 
         lblTexto6.setText("Fecha de nacimiento");
         jPanel3.add(lblTexto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
-        jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 20));
+        jPanel3.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 20));
 
         lblTexto3.setText("Nombre");
         jPanel3.add(lblTexto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
@@ -157,21 +166,12 @@ public class Registro extends javax.swing.JFrame {
         lblTexto10.setText("Teléfono celular");
         jPanel3.add(lblTexto10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        lblTexto11.setText("Dirección de domicilio");
+        lblTexto11.setText("Contraseña de cuenta");
         jPanel3.add(lblTexto11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
         jPanel3.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 180, 20));
 
-        lblTexto9.setText("Año");
-        jPanel3.add(lblTexto9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
-
-        lblTexto7.setText("Día");
-        jPanel3.add(lblTexto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
-
-        lblTexto8.setText("Mes");
-        jPanel3.add(lblTexto8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
-        jPanel3.add(spnAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
-        jPanel3.add(spnDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, 20));
-        jPanel3.add(spnMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
+        lblTexto9.setText("/");
+        jPanel3.add(lblTexto9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 20, 20));
 
         lblTexto15.setText("Número de targeta");
         jPanel3.add(lblTexto15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
@@ -202,6 +202,11 @@ public class Registro extends javax.swing.JFrame {
         jPanel3.add(txtCapital, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 180, -1));
 
         btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, -1, -1));
 
         pnl.setBackground(new java.awt.Color(153, 153, 255));
@@ -225,6 +230,21 @@ public class Registro extends javax.swing.JFrame {
         txtCuenta.setEnabled(false);
         jPanel3.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
         jPanel3.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 60));
+        jPanel3.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 40, -1));
+        jPanel3.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, -1));
+        jPanel3.add(txtMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 40, -1));
+
+        lblTexto16.setText("Año");
+        jPanel3.add(lblTexto16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
+
+        lblTexto17.setText("Mes");
+        jPanel3.add(lblTexto17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
+
+        lblTexto18.setText("Día");
+        jPanel3.add(lblTexto18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+
+        lblTexto19.setText("/");
+        jPanel3.add(lblTexto19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 10, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,6 +259,69 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBackMouseClicked
+        // TODO add your handling code here:
+        if(contador==0){
+            new BancaVirtual().show();
+        }else{
+        new BancaVirtual(cuentas).show();
+        }
+        
+    }//GEN-LAST:event_pnlBackMouseClicked
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        // TODO add your handling code here:
+         String nombre;
+     String apellido;
+     int cedula=0;
+     String tipoCuenta="0";
+     String telefono;
+     String contrasenia;
+     double capital;
+     float numeroTarjeta;
+     String fechaNacimiento="0";
+     int numeroDeCuenta;
+     String prueba;
+     int prueba1;
+   //  try{
+         nombre=txtNombre.getText();
+         apellido=txtApellido.getText();      
+         if(rbtPrivada.isSelected()){
+             tipoCuenta="Privada";
+         }
+         if(rbtColectiva.isSelected()){
+             tipoCuenta="Colectiva";
+         }
+         if(rbtEmpresarial.isSelected()){
+             tipoCuenta="Empresarial";
+         }
+         telefono=txtTelefono.getText();
+         contrasenia=txtContrasenia.getText();
+         capital=Double.parseDouble(txtCapital.getText());
+         Cuenta cuentaNueva=new Cuenta( nombre, apellido, tipoCuenta, telefono,  contrasenia, capital);
+         
+         prueba1=Integer.parseInt(txtCedula.getText());
+         if(cuentaNueva.verificarCedula(prueba1)==true){
+             cedula=prueba1;
+         }
+         prueba=txtDia.getText()+"/"+txtMes.getText()+"/"+txtAnio.getText();
+         if(cuentaNueva.validarFecha(prueba)){
+             fechaNacimiento=prueba;
+         }
+         
+         cuentaNueva.setCedula(cedula);
+         cuentaNueva.setFechaNacimiento(fechaNacimiento);
+         
+         /*método para generar un numero de tarjeta
+         metodo para generar un numero de cuenta
+         
+*/       cuentaNueva.setNumeroDeCuenta(123);
+         
+         cuentas.add(cuentaNueva);
+    // }
+        contador++;
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,7 +361,6 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgTipoCuenta;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblRegresar;
@@ -289,27 +371,30 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTexto13;
     private javax.swing.JLabel lblTexto14;
     private javax.swing.JLabel lblTexto15;
+    private javax.swing.JLabel lblTexto16;
+    private javax.swing.JLabel lblTexto17;
+    private javax.swing.JLabel lblTexto18;
+    private javax.swing.JLabel lblTexto19;
     private javax.swing.JLabel lblTexto2;
     private javax.swing.JLabel lblTexto3;
     private javax.swing.JLabel lblTexto4;
     private javax.swing.JLabel lblTexto5;
     private javax.swing.JLabel lblTexto6;
-    private javax.swing.JLabel lblTexto7;
-    private javax.swing.JLabel lblTexto8;
     private javax.swing.JLabel lblTexto9;
     private javax.swing.JPanel pnl;
+    private javax.swing.JPanel pnlBack;
     private javax.swing.JPanel pnlCabecera;
     private javax.swing.JRadioButton rbtColectiva;
     private javax.swing.JRadioButton rbtEmpresarial;
     private javax.swing.JRadioButton rbtPrivada;
-    private javax.swing.JSpinner spnAnio;
-    private javax.swing.JSpinner spnDia;
-    private javax.swing.JSpinner spnMes;
+    private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCapital;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtContrasenia;
     private javax.swing.JTextField txtCuenta;
-    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtDia;
+    private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTarjeta;
     private javax.swing.JTextField txtTelefono;

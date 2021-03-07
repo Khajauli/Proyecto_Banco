@@ -14,13 +14,23 @@ public class Cuenta {
 
     private String nombre;
     private String apellido;
-    private int cedula;
+    private int cedula;//
     private String tipoCuenta;
     private String telefono;
-    private String direccion;
+    private String contrasenia;
     private double capital;
-    private float numeroTargeta;
-    private String fechaNacimiento;
+    private float numeroTarjeta;//
+    private String fechaNacimiento;//
+    private int numeroDeCuenta;//
+    
+    public Cuenta(String nombre,String apellido,String tipoCuenta,String telefono, String contrasenia,double capital){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.tipoCuenta=tipoCuenta;
+        this.telefono=telefono;
+        this.contrasenia=contrasenia;
+        this.capital=capital;
+    }
 
     public boolean verificarCedula(int cedula) {
 
@@ -176,12 +186,12 @@ public class Cuenta {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     public double getCapital() {
@@ -192,12 +202,12 @@ public class Cuenta {
         this.capital = capital;
     }
 
-    public float getNumeroTargeta() {
-        return numeroTargeta;
+    public float getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
-    public void setNumeroTargeta(float numeroTargeta) {
-        this.numeroTargeta = numeroTargeta;
+    public void setNumeroTarjeta(float numeroTargeta) {
+        this.numeroTarjeta = numeroTargeta;
     }
 
     public String getFechaNacimiento() {
@@ -207,5 +217,14 @@ public class Cuenta {
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public int getNumeroDeCuenta() {
+        return numeroDeCuenta;
+    }
+
+    public void setNumeroDeCuenta(int numeroDeCuenta) {
+        this.numeroDeCuenta = numeroDeCuenta;
+    }
+    
 
 }

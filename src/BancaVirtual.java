@@ -4,16 +4,28 @@
  * and open the template in the editor.
  */
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 /**
  *
  * @author Marlon
  */
 public class BancaVirtual extends javax.swing.JFrame {
+private ArrayList cuentas; 
 
+    
+  
     /**
      * Creates new form BancaVirtual
      */
+public BancaVirtual(ArrayList cuentas){
+        this.cuentas=cuentas;
+        initComponents();
+        scaleImage1();
+         scaleImage2();
+         scaleImage3();
+    }
+
     public BancaVirtual() {
         initComponents();
         scaleImage1();
@@ -56,10 +68,10 @@ public class BancaVirtual extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
         btnIniciar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnRegistro = new javax.swing.JButton();
         pswContra = new javax.swing.JPasswordField();
         lblLogo = new javax.swing.JLabel();
         lblIcon = new javax.swing.JLabel();
@@ -76,9 +88,9 @@ public class BancaVirtual extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("USUARIO");
+        jLabel1.setText("NUMERO DE CUENTA");
 
-        txtUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtNumero.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnIniciar.setText("Iniciar Sesión ");
         btnIniciar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -90,11 +102,11 @@ public class BancaVirtual extends javax.swing.JFrame {
 
         jLabel3.setText("No tiene una cuenta? cree una");
 
-        jButton1.setText("aquí");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistro.setText("aquí");
+        btnRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistroActionPerformed(evt);
             }
         });
 
@@ -119,14 +131,14 @@ public class BancaVirtual extends javax.swing.JFrame {
                         .addGap(0, 8, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(btnRegistro)
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(pswContra)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtUsuario)
+                .addComponent(txtNumero)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,7 +147,7 @@ public class BancaVirtual extends javax.swing.JFrame {
                 .addGap(71, 71, 71)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -145,7 +157,7 @@ public class BancaVirtual extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton1))
+                    .addComponent(btnRegistro))
                 .addGap(15, 15, 15))
         );
 
@@ -160,14 +172,30 @@ public class BancaVirtual extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        
-        new Menu().show();
+        int  numeroCuenta;
+        String contrasenia;
+      //  try{
+      numeroCuenta=Integer.parseInt(txtNumero.getText());
+      contrasenia=pswContra.getText();
+      for(Object c:cuentas){
+          if(c instanceof Cuenta){
+              if(((Cuenta)c).getNumeroDeCuenta()==numeroCuenta&&((Cuenta)c).getContrasenia()==contrasenia){
+                  new Menu(cuentas).show();
         this.hide();
+              }
+          }
+      }
+            
+        
+     //   }
+        
     }//GEN-LAST:event_btnIniciarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        new Registro().show();
+        this.hide();
+    }//GEN-LAST:event_btnRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,7 +234,7 @@ public class BancaVirtual extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -215,6 +243,6 @@ public class BancaVirtual extends javax.swing.JFrame {
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblPersona;
     private javax.swing.JPasswordField pswContra;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtNumero;
     // End of variables declaration//GEN-END:variables
 }
