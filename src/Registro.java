@@ -149,11 +149,17 @@ public ArrayList cuentas=new ArrayList();
 
         lblTexto6.setText("Fecha de nacimiento");
         jPanel3.add(lblTexto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+
+        txtContrasenia.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 20));
 
         lblTexto3.setText("Nombre");
         jPanel3.add(lblTexto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 180, 20));
+
+        txtApellido.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 180, 20));
 
         lblTexto4.setText("Apellido");
@@ -161,6 +167,8 @@ public ArrayList cuentas=new ArrayList();
 
         lblTexto5.setText("Número de cédula");
         jPanel3.add(lblTexto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
+
+        txtCedula.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 180, 20));
 
         lblTexto10.setText("Teléfono celular");
@@ -168,6 +176,8 @@ public ArrayList cuentas=new ArrayList();
 
         lblTexto11.setText("Contraseña de cuenta");
         jPanel3.add(lblTexto11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
+
+        txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 180, 20));
 
         lblTexto9.setText("/");
@@ -194,11 +204,14 @@ public ArrayList cuentas=new ArrayList();
         lblTexto12.setText("Tipo de cuenta");
         jPanel3.add(lblTexto12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, -1));
 
+        txtTarjeta.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         txtTarjeta.setEnabled(false);
         jPanel3.add(txtTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 180, -1));
 
         lblTexto13.setText("Capital inicial");
         jPanel3.add(lblTexto13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+
+        txtCapital.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jPanel3.add(txtCapital, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 180, -1));
 
         btnRegistrarse.setText("Registrarse");
@@ -227,6 +240,7 @@ public ArrayList cuentas=new ArrayList();
         lblTexto14.setText("Número de cuenta");
         jPanel3.add(lblTexto14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
 
+        txtCuenta.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         txtCuenta.setEnabled(false);
         jPanel3.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
         jPanel3.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 60));

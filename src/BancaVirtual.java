@@ -180,7 +180,7 @@ public BancaVirtual(ArrayList cuentas){
       for(Object c:cuentas){
           if(c instanceof Cuenta){
               if(((Cuenta)c).getNumeroDeCuenta()==numeroCuenta&&((Cuenta)c).getContrasenia()==contrasenia){
-                  new Menu(cuentas).show();
+                  new Menu(((Cuenta)c)).show();
         this.hide();
               }
           }

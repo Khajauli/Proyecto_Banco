@@ -57,7 +57,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" pref="455" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -78,7 +78,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" pref="204" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -176,7 +176,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel7">
+            <Container class="javax.swing.JPanel" name="pnlAgua">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -201,7 +201,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                  <Component id="txtMedidrAgua" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="txtMedidorAgua" min="-2" pref="203" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
@@ -216,8 +216,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jButton1" pref="129" max="32767" attributes="0"/>
-                              <Component id="txtMedidrAgua1" max="32767" attributes="0"/>
+                              <Component id="btnAgua" pref="129" max="32767" attributes="0"/>
+                              <Component id="txtPagoAgua" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                       </Group>
@@ -231,13 +231,13 @@
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtMedidrAgua" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="txtMedidorAgua" min="-2" pref="28" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtMedidrAgua1" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="txtPagoAgua" min="-2" pref="28" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAgua" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="98" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -259,7 +259,7 @@
                     <Property name="text" type="java.lang.String" value="N&#xfa;mero de medidor"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtMedidrAgua">
+                <Component class="javax.swing.JTextField" name="txtMedidorAgua">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -269,19 +269,22 @@
                     <Property name="text" type="java.lang.String" value="Valor a pagar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtMedidrAgua1">
+                <Component class="javax.swing.JTextField" name="txtPagoAgua">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="btnAgua">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Realizar pago"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAguaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel8">
+            <Container class="javax.swing.JPanel" name="pnlLuz">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -306,7 +309,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="txtMedidorAgua" min="-2" pref="240" max="-2" attributes="0"/>
+                                  <Component id="txtMedidorLuz" min="-2" pref="240" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
@@ -321,8 +324,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtMedidorAgua1" max="32767" attributes="0"/>
-                              <Component id="jButton2" pref="143" max="32767" attributes="0"/>
+                              <Component id="txtPagoLuz" max="32767" attributes="0"/>
+                              <Component id="btnLuz" pref="143" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                       </Group>
@@ -336,13 +339,13 @@
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtMedidorAgua" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="txtMedidorLuz" min="-2" pref="28" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="txtMedidorAgua1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtPagoLuz" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLuz" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="68" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -364,7 +367,7 @@
                     <Property name="text" type="java.lang.String" value="Numero de medidor"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtMedidorAgua">
+                <Component class="javax.swing.JTextField" name="txtMedidorLuz">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
@@ -374,15 +377,18 @@
                     <Property name="text" type="java.lang.String" value="Valor a pagar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtMedidorAgua1">
+                <Component class="javax.swing.JTextField" name="txtPagoLuz">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="btnLuz">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Realizar pago"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLuzActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -394,8 +400,8 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Telefono">
-                    <Property name="tabTitle" type="java.lang.String" value="Telefono"/>
+                  <JTabbedPaneConstraints tabName="Tel&#xe9;fono">
+                    <Property name="tabTitle" type="java.lang.String" value="Tel&#xe9;fono"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -412,34 +418,30 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jRadioButton1" min="-2" pref="74" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton2" min="-2" pref="89" max="-2" attributes="0"/>
-                                          <EmptySpace pref="36" max="32767" attributes="0"/>
-                                          <Component id="jRadioButton3" min="-2" pref="93" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="lblTexto2" min="-2" pref="136" max="-2" attributes="0"/>
+                                      <Component id="lblTexto3" min="-2" pref="136" max="-2" attributes="0"/>
+                                      <Component id="lblTexto1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtTelefono" max="32767" attributes="0"/>
-                                      <Component id="btnRecarga" pref="119" max="32767" attributes="0"/>
+                                      <Component id="txtValor" max="32767" attributes="0"/>
+                                      <Component id="btnPagoTelef" pref="119" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="txtTelefono1" min="-2" pref="224" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="txtTelefono" min="-2" pref="224" max="-2" attributes="0"/>
+                                      <Component id="txtNombre" min="-2" pref="224" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -450,24 +452,20 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblTexto1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtNombre" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtTelefono1" min="-2" pref="29" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTexto2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="txtTelefono" min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="lblTexto3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="txtValor" min="-2" pref="29" max="-2" attributes="0"/>
                           <EmptySpace pref="57" max="32767" attributes="0"/>
-                          <Component id="btnRecarga" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPagoTelef" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -482,39 +480,7 @@
                     <Property name="text" type="java.lang.String" value="jLabel4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Nombre de la operadora"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton1">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="btgOperadoras"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Claro"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton2">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="btgOperadoras"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Movistar"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JRadioButton" name="jRadioButton3">
-                  <Properties>
-                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="btgOperadoras"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Tuenti"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="lblTexto2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -522,9 +488,12 @@
                     <Property name="text" type="java.lang.String" value="N&#xfa;mero de tel&#xe9;fono"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtTelefono">
+                <Component class="javax.swing.JTextField" name="txtValor">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
+                <Component class="javax.swing.JLabel" name="lblTexto3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -532,12 +501,25 @@
                     <Property name="text" type="java.lang.String" value="Valor de la recarga"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtTelefono1">
+                <Component class="javax.swing.JTextField" name="txtNombre">
                 </Component>
-                <Component class="javax.swing.JButton" name="btnRecarga">
+                <Component class="javax.swing.JButton" name="btnPagoTelef">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Realizar recarga"/>
+                    <Property name="text" type="java.lang.String" value="Realizar Pago"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPagoTelefActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblTexto1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Nombre"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtTelefono">
                 </Component>
               </SubComponents>
             </Container>

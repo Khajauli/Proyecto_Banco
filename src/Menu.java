@@ -14,15 +14,20 @@ import javax.swing.ImageIcon;
  * @author Marlon
  */
 public class Menu extends javax.swing.JFrame {
-ArrayList cuentas;
+Cuenta cuentas;
     /**
      * Creates new form Menu
      * @param cuentas
      */
-    public Menu(ArrayList cuentas){
+    public Menu(Cuenta cuentas){
         this.cuentas=cuentas;
         initComponents();
         scaleImage1();
+        txtNombre.setText(cuentas.getNombre()+" "+cuentas.getApellido());
+        txtCuenta.setText(cuentas.getNumeroDeCuenta()+" ");
+        txtTipo.setText(cuentas.getTipoCuenta());
+        txtSaldo.setText(cuentas.getCapital()+"");
+        
     }
     
     public Menu() {
@@ -67,7 +72,7 @@ ArrayList cuentas;
         txtSaldo = new javax.swing.JTextField();
         txtTipo = new javax.swing.JTextField();
         txtCuenta = new javax.swing.JTextField();
-        pnlCajero = new javax.swing.JPanel();
+        pnlRetiro = new javax.swing.JPanel();
         lblIcono4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         pnlRecargas = new javax.swing.JPanel();
@@ -76,9 +81,7 @@ ArrayList cuentas;
         pnlBorde1 = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        lblFlecha = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlDepositos = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -134,6 +137,12 @@ ArrayList cuentas;
                 .addContainerGap())
         );
 
+        pnlPagos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlPagosMouseClicked(evt);
+            }
+        });
+
         lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_house_with_a_garden_30px.png"))); // NOI18N
 
         jLabel7.setText("Pagos");
@@ -158,6 +167,12 @@ ArrayList cuentas;
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pnlPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlPrestamosMouseClicked(evt);
+            }
+        });
 
         lblIcono3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_cash_in_hand_32px.png"))); // NOI18N
         lblIcono3.setText("jLabel3");
@@ -224,14 +239,24 @@ ArrayList cuentas;
         txtCuenta.setBorder(null);
         jPanel6.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 110, 10));
 
-        pnlCajero.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlRetiro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlRetiroMouseClicked(evt);
+            }
+        });
+        pnlRetiro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIcono4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_pos_terminal_26px.png"))); // NOI18N
-        pnlCajero.add(lblIcono4, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 34, -1));
+        pnlRetiro.add(lblIcono4, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 34, -1));
 
         jLabel9.setText("Retiros");
-        pnlCajero.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 48, 40, -1));
+        pnlRetiro.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 48, 40, -1));
 
+        pnlRecargas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlRecargasMouseClicked(evt);
+            }
+        });
         pnlRecargas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setText("Recargas");
@@ -246,75 +271,57 @@ ArrayList cuentas;
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MENÚ PRINCIPAL");
 
-        jPanel3.setBackground(new java.awt.Color(69, 159, 156));
-
-        lblFlecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_26px.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFlecha, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFlecha, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout pnlBorde1Layout = new javax.swing.GroupLayout(pnlBorde1);
         pnlBorde1.setLayout(pnlBorde1Layout);
         pnlBorde1Layout.setHorizontalGroup(
             pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorde1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addGap(40, 40, 40)
                 .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         pnlBorde1Layout.setVerticalGroup(
             pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorde1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(36, 36, 36))
             .addGroup(pnlBorde1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlBorde1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBorde1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlBorde1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel2)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
+
+        pnlDepositos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlDepositosMouseClicked(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_wallet_32px.png"))); // NOI18N
 
         jLabel4.setText("Depósitos");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlDepositosLayout = new javax.swing.GroupLayout(pnlDepositos);
+        pnlDepositos.setLayout(pnlDepositosLayout);
+        pnlDepositosLayout.setHorizontalGroup(
+            pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDepositosLayout.createSequentialGroup()
+                .addGroup(pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlDepositosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDepositosLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlDepositosLayout.setVerticalGroup(
+            pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDepositosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -341,9 +348,9 @@ ArrayList cuentas;
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(38, 38, 38)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlDepositos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlCajero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pnlRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -355,8 +362,8 @@ ArrayList cuentas;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlPagos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlCajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlRetiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlDepositos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -369,6 +376,36 @@ ArrayList cuentas;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPagosMouseClicked
+        // TODO add your handling code here:
+        new Pagos().show();
+        this.hide();
+    }//GEN-LAST:event_pnlPagosMouseClicked
+
+    private void pnlDepositosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDepositosMouseClicked
+        // TODO add your handling code here:
+        new GUIDéposito().show();
+        this.hide();
+    }//GEN-LAST:event_pnlDepositosMouseClicked
+
+    private void pnlRetiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRetiroMouseClicked
+        // TODO add your handling code here:
+        new GUIRetiro().show();
+        this.hide();
+    }//GEN-LAST:event_pnlRetiroMouseClicked
+
+    private void pnlPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPrestamosMouseClicked
+        // TODO add your handling code here:
+        new Prestamos().show();
+        this.hide();
+    }//GEN-LAST:event_pnlPrestamosMouseClicked
+
+    private void pnlRecargasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRecargasMouseClicked
+        // TODO add your handling code here:
+        new Recargas().show();
+        this.hide();
+    }//GEN-LAST:event_pnlRecargasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -415,11 +452,8 @@ ArrayList cuentas;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel lblFlecha;
     private javax.swing.JLabel lblIcono1;
     private javax.swing.JLabel lblIcono2;
     private javax.swing.JLabel lblIcono3;
@@ -434,10 +468,11 @@ ArrayList cuentas;
     private javax.swing.JLabel lblSaldo;
     private javax.swing.JPanel pnlBorde1;
     private javax.swing.JPanel pnlBorde2;
-    private javax.swing.JPanel pnlCajero;
+    private javax.swing.JPanel pnlDepositos;
     private javax.swing.JPanel pnlPagos;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRecargas;
+    private javax.swing.JPanel pnlRetiro;
     private javax.swing.JTextField txtCuenta;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSaldo;

@@ -71,7 +71,7 @@ public class GUIDéposito extends javax.swing.JFrame {
         lblDeposito.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         lblDeposito.setForeground(new java.awt.Color(255, 255, 255));
         lblDeposito.setText("DEPÓSITO");
-        jPanel1.add(lblDeposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 149, -1));
+        jPanel1.add(lblDeposito, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 149, -1));
         jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 61, 61));
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 153));
