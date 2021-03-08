@@ -72,6 +72,8 @@ Cuenta cuentas;
         txtSaldo = new javax.swing.JTextField();
         txtTipo = new javax.swing.JTextField();
         txtCuenta = new javax.swing.JTextField();
+        lblSaldo1 = new javax.swing.JLabel();
+        txtTarjeta = new javax.swing.JTextField();
         pnlRetiro = new javax.swing.JPanel();
         lblIcono4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -84,6 +86,9 @@ Cuenta cuentas;
         pnlDepositos = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        pnlRecargas1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        lblIcono9 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -165,7 +170,7 @@ Cuenta cuentas;
                 .addComponent(lblIcono2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pnlPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -208,7 +213,7 @@ Cuenta cuentas;
         jPanel6.add(lblIcono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 19, 34, -1));
 
         lblSaldo.setText("Saldo disponible");
-        jPanel6.add(lblSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel6.add(lblSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         lblNumero.setText("Tipo de cuenta");
         jPanel6.add(lblNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
@@ -216,10 +221,10 @@ Cuenta cuentas;
         txtNombre.setBackground(new java.awt.Color(240, 240, 240));
         txtNombre.setText("NOmbre");
         txtNombre.setBorder(null);
-        jPanel6.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 160, 24));
+        jPanel6.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 160, 20));
 
         jLabel1.setText("Nombre");
-        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 29, 47, -1));
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 47, -1));
 
         lblNumero1.setText("Número de cuenta");
         jPanel6.add(lblNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
@@ -227,17 +232,25 @@ Cuenta cuentas;
         txtSaldo.setBackground(new java.awt.Color(240, 240, 240));
         txtSaldo.setText("saldo");
         txtSaldo.setBorder(null);
-        jPanel6.add(txtSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 160, 10));
+        jPanel6.add(txtSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 110, 20));
 
         txtTipo.setBackground(new java.awt.Color(240, 240, 240));
         txtTipo.setText("numero de cuenta");
         txtTipo.setBorder(null);
-        jPanel6.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 110, -1));
+        jPanel6.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 110, 20));
 
         txtCuenta.setBackground(new java.awt.Color(240, 240, 240));
         txtCuenta.setText("numero de cuenta");
         txtCuenta.setBorder(null);
-        jPanel6.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 110, 10));
+        jPanel6.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 110, 20));
+
+        lblSaldo1.setText("Número de tarjeta");
+        jPanel6.add(lblSaldo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        txtTarjeta.setBackground(new java.awt.Color(240, 240, 240));
+        txtTarjeta.setText("saldo");
+        txtTarjeta.setBorder(null);
+        jPanel6.add(txtTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 110, 20));
 
         pnlRetiro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -300,34 +313,26 @@ Cuenta cuentas;
                 pnlDepositosMouseClicked(evt);
             }
         });
+        pnlDepositos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_wallet_32px.png"))); // NOI18N
+        pnlDepositos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 11, 37, -1));
 
         jLabel4.setText("Depósitos");
+        pnlDepositos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 49, -1, -1));
 
-        javax.swing.GroupLayout pnlDepositosLayout = new javax.swing.GroupLayout(pnlDepositos);
-        pnlDepositos.setLayout(pnlDepositosLayout);
-        pnlDepositosLayout.setHorizontalGroup(
-            pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDepositosLayout.createSequentialGroup()
-                .addGroup(pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlDepositosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlDepositosLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        pnlDepositosLayout.setVerticalGroup(
-            pnlDepositosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlDepositosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        pnlRecargas1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlRecargas1MouseClicked(evt);
+            }
+        });
+        pnlRecargas1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setText("Consultas");
+        pnlRecargas1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        lblIcono9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_printer_maintenance_32px.png"))); // NOI18N
+        pnlRecargas1.add(lblIcono9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 30, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -337,20 +342,20 @@ Cuenta cuentas;
             .addComponent(pnlBorde1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(38, 38, 38)
-                            .addComponent(pnlDepositos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pnlRecargas, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(pnlDepositos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pnlRetiro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(pnlRecargas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -358,17 +363,22 @@ Cuenta cuentas;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pnlBorde1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlPagos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlRetiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlDepositos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(44, 44, 44)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pnlPagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlDepositos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pnlPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlRecargas1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43)
                 .addComponent(pnlBorde2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -379,19 +389,19 @@ Cuenta cuentas;
 
     private void pnlPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPagosMouseClicked
         // TODO add your handling code here:
-        new Pagos().show();
+        new Pagos(cuentas).show();
         this.hide();
     }//GEN-LAST:event_pnlPagosMouseClicked
 
     private void pnlDepositosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlDepositosMouseClicked
         // TODO add your handling code here:
-        new GUIDéposito().show();
+        new GUIDéposito(cuentas).show();
         this.hide();
     }//GEN-LAST:event_pnlDepositosMouseClicked
 
     private void pnlRetiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRetiroMouseClicked
         // TODO add your handling code here:
-        new GUIRetiro().show();
+        new GUIRetiro(cuentas).show();
         this.hide();
     }//GEN-LAST:event_pnlRetiroMouseClicked
 
@@ -406,6 +416,10 @@ Cuenta cuentas;
         new Recargas().show();
         this.hide();
     }//GEN-LAST:event_pnlRecargasMouseClicked
+
+    private void pnlRecargas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRecargas1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlRecargas1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -445,6 +459,7 @@ Cuenta cuentas;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -462,20 +477,24 @@ Cuenta cuentas;
     private javax.swing.JLabel lblIcono6;
     private javax.swing.JLabel lblIcono7;
     private javax.swing.JLabel lblIcono8;
+    private javax.swing.JLabel lblIcono9;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNumero;
     private javax.swing.JLabel lblNumero1;
     private javax.swing.JLabel lblSaldo;
+    private javax.swing.JLabel lblSaldo1;
     private javax.swing.JPanel pnlBorde1;
     private javax.swing.JPanel pnlBorde2;
     private javax.swing.JPanel pnlDepositos;
     private javax.swing.JPanel pnlPagos;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRecargas;
+    private javax.swing.JPanel pnlRecargas1;
     private javax.swing.JPanel pnlRetiro;
     private javax.swing.JTextField txtCuenta;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSaldo;
+    private javax.swing.JTextField txtTarjeta;
     private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
