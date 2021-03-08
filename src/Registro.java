@@ -2,6 +2,7 @@
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -304,7 +305,7 @@ public ArrayList cuentas=new ArrayList();
      int numeroDeCuenta;
      String prueba;
      int prueba1;
-   //  try{
+    try{
          nombre=txtNombre.getText();
          apellido=txtApellido.getText();      
          if(rbtPrivada.isSelected()){
@@ -340,10 +341,13 @@ public ArrayList cuentas=new ArrayList();
 */       cuentaNueva.setNumeroDeCuenta(123);
          
          cuentas.add(cuentaNueva);
-    // }
-        contador++;
+         contador++;
         new Menu(cuentaNueva).show();
         this.hide();
+     }catch(NumberFormatException exception){
+        
+        JOptionPane.showMessageDialog(rootPane,"Un campo fue ingresado incorrectamente");
+     }
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**

@@ -86,7 +86,7 @@ Cuenta cuentas;
         pnlDepositos = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        pnlRecargas1 = new javax.swing.JPanel();
+        pnlConsultas = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         lblIcono9 = new javax.swing.JLabel();
 
@@ -321,18 +321,18 @@ Cuenta cuentas;
         jLabel4.setText("Depósitos");
         pnlDepositos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 49, -1, -1));
 
-        pnlRecargas1.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlRecargas1MouseClicked(evt);
+                pnlConsultasMouseClicked(evt);
             }
         });
-        pnlRecargas1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlConsultas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setText("Consultas");
-        pnlRecargas1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        pnlConsultas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         lblIcono9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_printer_maintenance_32px.png"))); // NOI18N
-        pnlRecargas1.add(lblIcono9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 30, 30));
+        pnlConsultas.add(lblIcono9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 30, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -355,7 +355,7 @@ Cuenta cuentas;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pnlRetiro, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                            .addComponent(pnlRecargas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(pnlConsultas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -377,7 +377,7 @@ Cuenta cuentas;
                             .addComponent(pnlRecargas, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlRecargas1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pnlConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43)
                 .addComponent(pnlBorde2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -407,19 +407,19 @@ Cuenta cuentas;
 
     private void pnlPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPrestamosMouseClicked
         // TODO add your handling code here:
-        new Prestamos().show();
+        new Prestamos(cuentas).show();
         this.hide();
     }//GEN-LAST:event_pnlPrestamosMouseClicked
 
     private void pnlRecargasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRecargasMouseClicked
         // TODO add your handling code here:
-        new Recargas().show();
+        new Recargas(cuentas).show();
         this.hide();
     }//GEN-LAST:event_pnlRecargasMouseClicked
 
-    private void pnlRecargas1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRecargas1MouseClicked
+    private void pnlConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlConsultasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_pnlRecargas1MouseClicked
+    }//GEN-LAST:event_pnlConsultasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -485,11 +485,11 @@ Cuenta cuentas;
     private javax.swing.JLabel lblSaldo1;
     private javax.swing.JPanel pnlBorde1;
     private javax.swing.JPanel pnlBorde2;
+    private javax.swing.JPanel pnlConsultas;
     private javax.swing.JPanel pnlDepositos;
     private javax.swing.JPanel pnlPagos;
     private javax.swing.JPanel pnlPrestamos;
     private javax.swing.JPanel pnlRecargas;
-    private javax.swing.JPanel pnlRecargas1;
     private javax.swing.JPanel pnlRetiro;
     private javax.swing.JTextField txtCuenta;
     private javax.swing.JTextField txtNombre;

@@ -53,7 +53,7 @@ Cuenta cuentas;
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lblTitulo1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        pnlBack = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -93,30 +93,35 @@ Cuenta cuentas;
         lblTitulo1.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
         lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo1.setText("PRÉSTAMOS");
-        jPanel2.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 36, -1, -1));
+        jPanel2.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(102, 0, 204));
+        pnlBack.setBackground(new java.awt.Color(102, 0, 204));
+        pnlBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlBackMouseClicked(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_26px.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBackLayout = new javax.swing.GroupLayout(pnlBack);
+        pnlBack.setLayout(pnlBackLayout);
+        pnlBackLayout.setHorizontalGroup(
+            pnlBackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBackLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlBackLayout.setVerticalGroup(
+            pnlBackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBackLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 50));
+        jPanel2.add(pnlBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, 50));
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 70, 60));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -264,6 +269,12 @@ Cuenta cuentas;
         limpiarGUI();
     }//GEN-LAST:event_btnAprobarActionPerformed
 
+    private void pnlBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBackMouseClicked
+        // TODO add your handling code here:
+        new Menu(cuentas).show();
+        this.hide();
+    }//GEN-LAST:event_pnlBackMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -311,10 +322,10 @@ Cuenta cuentas;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel lblLabel1;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblTitulo1;
+    private javax.swing.JPanel pnlBack;
     private javax.swing.JTextField txtCuota;
     private javax.swing.JTextField txtInteres;
     private javax.swing.JTextField txtMontoF;
