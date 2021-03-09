@@ -170,7 +170,39 @@ public class Cuenta {
         
         this.numeroDeCuenta = numeroDeCuenta;
     }
-
+    
+    public void asignarNumeroTargeta(){
+        float numeroTargeta;
+        Random r = new Random();
+        
+        numeroTargeta = (float)(r.nextFloat()*1000000000*1000);
+       
+        int auxiliar = (int)(numeroTargeta/1000);
+        int contador = 3;
+        
+        //contar cuantos digitos tiene
+        while (auxiliar > 0){
+            auxiliar /= 10;
+            contador++;
+        }
+        
+        //Asegurarse de que numeroTargeta tenga 12 digitos. 
+        while(contador != 12){
+            if(contador > 12){
+                numeroTargeta /= 10;
+                contador --;
+            }
+            if(contador < 12){
+                numeroTargeta *= 10;
+                contador ++;
+            }
+        }
+        
+        this.numeroTarjeta = numeroTargeta;
+    }
+    
+    // Para transformar de notacion cientifica a decimal usamos: System.out.printf("info: %.0f\n", numeroTargeta);
+    
     public String getNombre() {
         return nombre;
     }
