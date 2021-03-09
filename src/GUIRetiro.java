@@ -267,7 +267,7 @@ public void scaleImage1(){
         monto=Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese nuevamente el monto que desea retirar", "Monto", 1));
         }
         } while (monto>saldo);
-        retiro= new Retiros(monto, saldo);
+        //retiro= new Retiros(monto, saldo);
         cuenta.setCapital(retiro.calcularTransferencia());
         
          habilitarGui();

@@ -15,7 +15,11 @@ public class Prestamo {
     private double interesAnual;
     private double cuotaMensual;
     private int tiempoPago;
-
+ 
+    public Prestamo(double montoPrestamo, int tiempoPago){
+        this.montoPrestamo=montoPrestamo;
+        this.tiempoPago=tiempoPago;
+    }
     public void calcularPrestamo() {
         this.montoPagar = (this.montoPrestamo * this.interesAnual) + this.montoPrestamo;
         this.cuotaMensual = this.montoPagar / tiempoPago;

@@ -12,6 +12,31 @@ public class Recarga {
     private double telefonoR;
     private double monto;
     private boolean esVerdadero;
+    private String operadora;
+    
+    public Recarga(double telefono,double monto,String operadora){
+        this.telefonoR=telefono;
+        this.monto=monto;
+        this.operadora=operadora;
+    }
+
+    public boolean isEsVerdadero() {
+        return esVerdadero;
+    }
+
+    public void setEsVerdadero(boolean esVerdadero) {
+        this.esVerdadero = esVerdadero;
+    }
+
+    public String getOperadora() {
+        return operadora;
+    }
+
+    public void setOperadora(String operadora) {
+        this.operadora = operadora;
+    }
+    
+    
 
     public double getTelefonoR() {
         return telefonoR;

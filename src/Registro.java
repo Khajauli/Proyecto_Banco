@@ -2,6 +2,7 @@
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -244,9 +245,15 @@ public ArrayList cuentas=new ArrayList();
         txtCuenta.setEnabled(false);
         jPanel3.add(txtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
         jPanel3.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 60));
-        jPanel3.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 40, -1));
-        jPanel3.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, -1));
-        jPanel3.add(txtMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 40, -1));
+
+        txtAnio.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jPanel3.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 40, 20));
+
+        txtDia.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jPanel3.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 40, 20));
+
+        txtMes.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jPanel3.add(txtMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 40, 20));
 
         lblTexto16.setText("Año");
         jPanel3.add(lblTexto16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
@@ -298,7 +305,7 @@ public ArrayList cuentas=new ArrayList();
      int numeroDeCuenta;
      String prueba;
      int prueba1;
-   //  try{
+    try{
          nombre=txtNombre.getText();
          apellido=txtApellido.getText();      
          if(rbtPrivada.isSelected()){
@@ -314,7 +321,7 @@ public ArrayList cuentas=new ArrayList();
          contrasenia=txtContrasenia.getText();
          capital=Double.parseDouble(txtCapital.getText());
           ArrayList objetos = new ArrayList();
-         Cuenta cuentaNueva=new Cuenta( nombre, apellido, tipoCuenta, telefono,  contrasenia, capital,objetos);
+         Cuenta cuentaNueva=new Cuenta( nombre, apellido, tipoCuenta, telefono,  contrasenia, capital);
          
          prueba1=Integer.parseInt(txtCedula.getText());
          if(cuentaNueva.verificarCedula(prueba1)==true){
@@ -334,10 +341,13 @@ public ArrayList cuentas=new ArrayList();
 */       cuentaNueva.setNumeroDeCuenta(123);
          
          cuentas.add(cuentaNueva);
-    // }
-        contador++;
+         contador++;
         new Menu(cuentaNueva).show();
         this.hide();
+     }catch(NumberFormatException exception){
+        
+        JOptionPane.showMessageDialog(rootPane,"Un campo fue ingresado incorrectamente");
+     }
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
