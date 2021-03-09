@@ -1,5 +1,6 @@
 
 import java.util.Calendar;
+import java.util.Random;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,14 +23,14 @@ public class Cuenta {
     private float numeroTarjeta;//
     private String fechaNacimiento;//
     private int numeroDeCuenta;//
-    
-    public Cuenta(String nombre,String apellido,String tipoCuenta,String telefono, String contrasenia,double capital){
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.tipoCuenta=tipoCuenta;
-        this.telefono=telefono;
-        this.contrasenia=contrasenia;
-        this.capital=capital;
+
+    public Cuenta(String nombre, String apellido, String tipoCuenta, String telefono, String contrasenia, double capital) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoCuenta = tipoCuenta;
+        this.telefono = telefono;
+        this.contrasenia = contrasenia;
+        this.capital = capital;
     }
 
     public boolean verificarCedula(int cedula) {
@@ -146,6 +147,30 @@ public class Cuenta {
         return validacion;
     }
 
+    public void asignarNumeroDeCuenta() {
+        int numeroDeCuenta;
+        Random r = new Random();
+
+        numeroDeCuenta = (int) (r.nextInt());
+        
+        while (numeroDeCuenta < 99999999 || numeroDeCuenta > 999999999) {
+            
+            if (numeroDeCuenta < 0) {
+                numeroDeCuenta *= -1;
+            }
+            
+            if(numeroDeCuenta < 99999999){
+                numeroDeCuenta *= 10;
+            } 
+            
+            if(numeroDeCuenta > 999999999){
+                numeroDeCuenta /= 10;
+            }
+        }
+        
+        this.numeroDeCuenta = numeroDeCuenta;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -225,6 +250,5 @@ public class Cuenta {
     public void setNumeroDeCuenta(int numeroDeCuenta) {
         this.numeroDeCuenta = numeroDeCuenta;
     }
-    
 
 }
