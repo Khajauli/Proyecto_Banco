@@ -32,5 +32,9 @@ public class Retiros implements Cajero{
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    public Retiros(double monto, double saldo){
+    this.montoR=monto;
+    this.saldo=saldo;
+    }
      
 }

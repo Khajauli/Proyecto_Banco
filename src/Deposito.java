@@ -11,6 +11,7 @@
 public class Deposito implements Cajero {
     private double montoD;
     private double saldo;
+    
     @Override
     public double calcularTransferencia(){
     this.saldo=this.saldo+this.montoD;
@@ -32,6 +33,9 @@ public class Deposito implements Cajero {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
+     public Deposito(double m, double s){
+     this.montoD=m;
+     this.saldo=s;
+     }
     
 }

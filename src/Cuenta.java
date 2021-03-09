@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /*
@@ -22,14 +23,16 @@ public class Cuenta {
     private float numeroTarjeta;//
     private String fechaNacimiento;//
     private int numeroDeCuenta;//
+    private ArrayList objetos ;
     
-    public Cuenta(String nombre,String apellido,String tipoCuenta,String telefono, String contrasenia,double capital){
+    public Cuenta(String nombre,String apellido,String tipoCuenta,String telefono, String contrasenia,double capital,ArrayList objetos ){
         this.nombre=nombre;
         this.apellido=apellido;
         this.tipoCuenta=tipoCuenta;
         this.telefono=telefono;
         this.contrasenia=contrasenia;
         this.capital=capital;
+        this.objetos= objetos;
     }
 
     public boolean verificarCedula(int cedula) {
@@ -146,6 +149,7 @@ public class Cuenta {
         return validacion;
     }
 
+    
     public String getNombre() {
         return nombre;
     }
@@ -224,6 +228,14 @@ public class Cuenta {
 
     public void setNumeroDeCuenta(int numeroDeCuenta) {
         this.numeroDeCuenta = numeroDeCuenta;
+    }
+
+    public ArrayList getObjetos() {
+        return objetos;
+    }
+
+    public void setObjetos(ArrayList objetos) {
+        this.objetos = objetos;
     }
     
 

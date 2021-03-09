@@ -10,7 +10,7 @@
  */
 public class Transferencias implements Cajero{
     private int receptorCuenta;
-    private String razon;
+    private String mensaje;
     private String receptorNombre;
     private double montoT;
     private double saldo;
@@ -29,11 +29,11 @@ public class Transferencias implements Cajero{
     }
 
     public String getRazon() {
-        return razon;
+        return mensaje;
     }
 
     public void setRazon(String razon) {
-        this.razon = razon;
+        this.mensaje = razon;
     }
 
     public String getReceptorNombre() {
